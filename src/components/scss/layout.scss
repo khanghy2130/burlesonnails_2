@@ -1,0 +1,85 @@
+$portraitRatio: "6/5";
+
+/* color vars */
+$primary: #520d4f;
+$secondary: #ec8aff;
+$tertiary: #111;
+
+
+/* font families */
+.heading-font {
+  font-family: 'Lobster', cursive;
+}
+.info-font {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+img {
+  width: 100%;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: $tertiary;
+}
+
+#root {
+  @extend .info-font;
+  font-size: 2.5vw; /* root font size */
+  background-color: $secondary;
+  color: $tertiary;
+  padding-bottom: 3em;
+  box-shadow: 0em 0.5em 0.5em black;
+  margin-bottom: 11.5em;
+
+}
+
+
+#main-heading {
+  @extend .heading-font;
+  font-weight: normal;
+  font-size: 1.5em;
+  color: $primary;
+  text-align: center;
+  margin: 0.3em 2em;
+}
+#logo {
+    @extend .heading-font;
+    text-align: center;
+    margin-bottom: 1em;
+
+    span {
+      font-size: 2.5em;
+      background-color: $primary;
+      color: $secondary;
+      padding: 0em 0.2em;
+      border-radius: 0.2em;
+    }
+  }
+
+
+/* portrait */
+@media only screen and (max-aspect-ratio: $portraitRatio){
+  #root {
+    font-size: 4.7vw;
+    margin-bottom: 14.5em;
+  }
+
+  #main-heading {
+    margin: 0.3em 0.5em;
+  }
+}
+
+
+@import "header.scss";
+@import "footer.scss";
+@import "home.scss";
+@import "services.scss";
+@import "gallery.scss";

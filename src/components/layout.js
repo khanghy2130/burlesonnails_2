@@ -1,43 +1,47 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
+import { Link } from "gatsby"
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import Helmet from 'react-helmet'
 
-import Header from "./header"
-import "./layout.css"
+import "./scss/layout.scss"
+import welcomeBanner from '../images/site-imgs/welcome-banner.jpg';
+import footerBanner from '../images/site-imgs/footer-banner.png';
+
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div id='root'>
+        <header>
+          <div id="image-canvas-div">
+            <img src={welcomeBanner} alt="Welcome Banner" />
+          </div>
+            
+          <nav>
+            <Link to={`/`} activeClassName="active-link">
+              <div></div>
+              Home
+            </Link>
+            <Link to={`/services`} activeClassName="active-link">
+              <div></div>
+              Services
+            </Link>
+            <Link to={`/gallery`} activeClassName="active-link">
+              <div></div>
+              Gallery
+            </Link>
+          </nav>
+        </header>
+
         <main>{children}</main>
+
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <img src={footerBanner} alt="footer banner" />
+          <br />
+
+          <p id="copyright-text">
+            Copyright © {new Date().getFullYear()} Burleson Nails & Spa<br/>Website created by <a href="http://www.hynguyen.info/">Hy Nguyen</a>
+          </p>
         </footer>
       </div>
     </>

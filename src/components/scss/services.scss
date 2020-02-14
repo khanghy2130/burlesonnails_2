@@ -1,0 +1,146 @@
+$animation-time-category-tab: 0.3s;
+
+#services-page {
+
+	#services-container {
+		padding: 0 5em;
+		margin: 2em 0;
+
+		.category-section {
+			margin: 1em 0;
+			font-size: 0.8em;
+
+			/* Clickable tab */
+			.category-tab {
+				background-color: $primary;
+				color: $secondary;
+				border: $primary 0.2em solid;
+				cursor: pointer;
+				font-size: 1.1em;
+				transition-property: color, background-color;
+				transition-duration: $animation-time-category-tab;
+
+				display: flex;
+				justify-content: space-between;
+				padding: 0.4em;
+				
+
+				&:hover {
+					background-color: transparent;
+					color: $primary;
+
+					/* plus sign color */
+					& .vertical,.horizontal {
+						background-color: $primary;
+					}
+				}
+			}
+
+			.table-container {
+				overflow: hidden;
+				transition: opacity 0.5s;
+
+				table {
+					border-collapse: collapse;
+					font-size: 1.1em;
+					width: 100%;
+					padding: 1em 0;
+					border: $primary 0.2em solid;
+					border-top: none;
+
+					tbody {
+						tr {
+							td {
+								padding: 0.3em;
+							}
+							td:nth-child(1){
+								text-align: left;
+							}
+							td:nth-child(2){
+								text-align: right;
+							}
+						}
+						tr:nth-child(2n-1){
+							background-color: rgba(0,0,0, 0.1);
+						}
+					}
+				}
+			}
+			
+
+			/* closed and opened states */
+			&.closed {
+				.vertical {
+					transition: all $animation-time-category-tab ease-in-out;
+					transform: rotate(-90deg);
+				}
+				.horizontal {
+					transition: all $animation-time-category-tab ease-in-out;
+					transform: rotate(-90deg);
+					opacity: 1;
+				}
+
+				.table-container {
+					max-height: 0;
+					opacity: 0;
+				}
+			}
+			&:not(.closed) {
+				.vertical {
+					transition: all $animation-time-category-tab ease-in-out;
+					transform: rotate(90deg);
+				}
+				.horizontal {
+					transition: all $animation-time-category-tab ease-in-out;
+					transform: rotate(90deg);
+					opacity: 0;
+				}
+
+				.table-container {
+					max-height: 1000vh;
+					opacity: 1;
+				}
+			}
+		}
+		
+	}
+
+	/* portrait */
+	@media only screen and (max-aspect-ratio: $portraitRatio){
+		#services-container {
+			padding: 0 0.7em;
+			font-size: 1.3em;
+		}
+	}
+}
+
+
+/* plus sign */
+
+.circle-plus .circle {
+    position: relative;
+    width: 2em;
+    height: 2em;
+    font-size: 0.4em;
+    margin: 1em;
+}
+.circle-plus .circle .horizontal {
+    position: absolute;
+    background-color: $secondary;
+    width: 3em;
+    height: .5em;
+    left: 50%;
+    margin-left: -1.5em;
+    top: 50%;
+    margin-top: -.25em;
+}
+.circle-plus .circle .vertical {
+    position: absolute;
+    background-color: $secondary;
+    width: .5em;
+    height: 3em;
+    left: 50%;
+    margin-left: -.25em;
+    top: 50%;
+    margin-top: -1.5em;
+}

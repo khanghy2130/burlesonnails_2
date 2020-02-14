@@ -19,6 +19,8 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            url
+            image
           }
         }
       }
@@ -75,7 +77,7 @@ function SEO({ description, lang, meta, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  description: ``,
+  description: `Burleson Nails & Spa offers services such as manicure, pedicure, waxing, and more.`,
 }
 
 SEO.propTypes = {

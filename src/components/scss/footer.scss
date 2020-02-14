@@ -1,0 +1,35 @@
+footer {
+	background-color: $tertiary;
+	margin-top: 2em;
+	padding-bottom: 1em;
+	text-align: center;
+
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	z-index: -10;
+
+
+	img {
+		display: inline-block;
+		width: 40%;
+	}
+
+	#copyright-text {
+		color: #ccc;
+		font-size: 0.8em;
+
+		a {
+			color: #fff;
+		}
+	}
+
+
+	/* portrait */
+	@media only screen and (max-aspect-ratio: $portraitRatio){
+		img {
+			width: 100%;
+		}
+	}
+}
