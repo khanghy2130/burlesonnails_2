@@ -4,4 +4,8 @@
 ## Burleson Nails Spa
 
 Website for a local business.
-Tools used: React, Gatsby
+Tools used: React, Gatsby, SASS
+
+![featured image][img1]
+
+[img1]: https://github.com/khanghy2130/final_portfolio/blob/master/project-images/burlesonnails.png "featured image"
