@@ -2,7 +2,7 @@
   "name": "burlesonnails_2",
   "private": true,
   "description": "None",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Hy Nguyen",
   "dependencies": {
     "gatsby": "^2.19.7",

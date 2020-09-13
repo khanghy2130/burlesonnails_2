@@ -31,7 +31,7 @@ const IndexPage = () => (
       <div className="row" id="info-div">
         <div>
           <h3>Phone Number</h3>
-          <a href="tel:8174473111">817-447-3111</a>
+          <a href="tel:6822555420">682-255-5420</a>
         </div>
         <div>
           <h3>Business Hours</h3>
