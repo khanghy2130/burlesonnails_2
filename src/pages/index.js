@@ -38,11 +38,15 @@ const IndexPage = () => (
           <table>
             <tbody>
               <tr>
-                <td>Mon - Sat: </td>
+                <td>Mon, Wed - Sat: </td>
                 <td>10am - 7pm</td>
               </tr>
               <tr>
                 <td>Sunday: </td>
+                <td>12pm - 5pm</td>
+              </tr>
+              <tr>
+                <td>Tue: </td>
                 <td>Closed</td>
               </tr>
             </tbody>
